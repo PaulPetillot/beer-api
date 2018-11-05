@@ -1,2 +1,83 @@
 @import 'reset';
+@import 'fonts';
+//header part
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    .headerLogo{
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+        img{
+            width: 120px;
+            height: 120px;
+        }
+    }
+    .headerList{
+        grid-column: 3;
+        align-self: end;
+        justify-content: center;
+        display: flex;
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-style: normal;
+            font-size: 15px;
+        }
+        li{
+            display: inline-flex;
+            margin: 5px;
+            :hover{
+                color: #E48E26;
+            }
+        }
+    }
+}
+//Beer Display part
+.grid-container{
+    margin: 1rem auto;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.grid-beer{
+     background-color: #F4F4F4;
+     height: 45vw;
+     margin: 0.5rem;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+}
+//footer part
+.pagination-pos{
+    display: grid;
+    margin-top:40px;
+    margin-bottom: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    .pagination{
+        grid-column: 2;
+        justify-self: center;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        li{
+            display: inline-flex;
+            margin: 3px;
+            background-color: #047CBB;
+            padding-top: 11px;
+            padding-left:14px;
+            padding-right: 14px;
+            padding-bottom: 11px;
+        }
+    }
+}
 

@@ -60,7 +60,10 @@ gulp.task('scss', function () {
         .pipe(uglifycss())
         .pipe(gulp.dest('./build/css/'));
 });
-
-gulp.task("default", [ "browserify", "serve" ]);
+gulp.task("copy", function() {
+	gulp.src("./images/*.*").pipe(gulp.dest("./build/images"));
+	gulp.src("./fonts/*.*").pipe(gulp.dest("./build/fonts"));
+	});
+gulp.task("default", ["browserify", "serve", "copy"]);
 
 
