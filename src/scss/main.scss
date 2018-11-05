@@ -175,6 +175,27 @@ header{
      }
     }
 }
+#random{
+    background-color: rgb(248, 183, 4);
+    border: none;
+    margin: auto;
+    width: 230px;
+    height: 80px;
+    padding: 2% 4%;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    color: white;
+}
+#random:hover{
+    background-color : #E48E26;
+}
+.global{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
 //Pick a beer page
 .pick-a-beer{
     display: grid;
