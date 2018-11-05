@@ -39,6 +39,7 @@ header{
         }
     }
 }
+
 //Beer Display part
 .grid-container{
     margin: 1rem auto;
@@ -75,17 +76,209 @@ header{
         font-weight: 400;
         font-style: normal;
         padding: 20px;
+        line-height: 15px;
      }
      .value{
          display: inline-flex;
          font-family: 'Playfair Display';
         font-weight: normal;
         font-style: normal;
-        .abv{margin: 10px;}
-        .ibu{margin: 10px;}
-        .ph{margin: 10px;}
+        .abv{
+            margin-top: 27px;
+            margin-right: 20px;
+        }
+        .ibu{margin-top: 27px;
+            margin-left: 20px;}
+        .ph{
+            margin-top: 20px;
+            margin-left: 28px;
+            background-color: orange;
+            padding: 8px 14px;
+            color: white;
+        }
      }
 }
+//Quick find part
+.article-container{
+    background-color: #F4F4F4;
+     height: 35vw;
+     margin: 30px;
+     display: inline-flex;
+     justify-content: center;
+     align-content: center;
+     flex-direction: row;
+     align-items: center;
+     text-align: center;
+     img{
+        width: 70px;
+        height: 280px; 
+        padding: 60px;
+    }
+     .random-beer-data{
+         width : 35%;
+     .name{
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-style: normal;
+        font-size: 18px;
+        padding: 10px;
+     }
+     .tagline{
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        color : #0C6CD4;
+     }
+     .description{
+         font-size: 13px;
+         font-family: 'Open Sans';
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+        line-height: 20px;
+     }
+     .value{
+         display: inline-flex;
+         font-family: 'Playfair Display';
+        font-weight: normal;
+        font-style: normal;
+        .abv{
+            margin-top: 27px;
+            margin-right: 20px;
+        }
+        .ibu{margin-top: 27px;
+            margin-left: 20px;}
+        .ph{
+            margin-top: 20px;
+            margin-left: 28px;
+            background-color: orange;
+            padding: 8px 14px;
+            color: white;
+        }
+     }
+     #button-ingredients{
+        margin-top: 20px;
+     }
+     .ingredients{
+         background-color: #047CBB;
+         padding: 10px 13px;
+         color: white;
+         border:none;
+         font-family: 'Open Sans';
+         font-weight: 600;
+         font-style: normal;
+         font-size: 12px;
+     }
+     button:hover{
+         background-color : #0C6CD4;
+     }
+    }
+}
+//Pick a beer page
+.pick-a-beer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: #F4F4F4;
+    width : 50%;
+    margin : auto;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: normal;
+    overflow: hidden;
+    .form-pick-a-beer{
+        height: 70px;
+    }
+    #text-pick{
+        grid-column: 1;
+        grid-row : 1;
+        color : #0C6CD4;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        margin-bottom: 30px;
+    }
+    .name-pick{
+        grid-column-start: 1;
+        grid-column-end : 3;
+        grid-row : 2;
+        justify-self: start;
+        margin-left: 35px;
+        input{
+            height: 30px;
+            width: 180px;
+            margin-left: 10px;
+        }
+    }
+    .hops-pick{
+        grid-column-start: 2;
+        grid-column-end : 4;
+        grid-row : 2;
+        margin-left: 110px;
+        justify-self: center;
+        input{
+            height: 30px;
+            width: 180px;
+            margin-left: 10px;
+        }
+    }
+    .abv-pick{
+        grid-column-start: 1;
+        grid-column-end : 2;
+        grid-row : 3;
+        justify-self: center;
+        input{
+            height: 30px;
+            width: 90px;
+            margin-left: 10px;
+        }
+    }
+    .ibu-pick{
+        grid-column-start: 2;
+        grid-column-end : 3;
+        grid-row : 3;
+        justify-self: center;
+        input{
+            height: 30px;
+            width: 90px;
+            margin-left: 10px;
+        }
+    }
+    .ebc-pick{
+        grid-column-start: 3;
+        grid-column-end : 4;
+        grid-row : 3;
+        justify-self: center;
+        input{
+            height: 30px;
+            width: 90px;
+            margin-left: 10px;
+        }
+    }
+    .button-pick-a-beer{
+        grid-column-start: 3;
+        grid-column-end : 4;
+        grid-row : 4;
+        justify-self: center;
+       
+    button{
+        background-color: #047CBB;
+         padding: 10px 13px;
+         color: white;
+         border:none;
+         font-family: 'Open Sans';
+         font-weight: 600;
+         font-style: normal;
+         font-size: 12px;
+        }
+    }
+}
+
+
+
+
 //footer part
 footer{
     margin : 2rem;
