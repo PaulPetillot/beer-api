@@ -216,10 +216,8 @@ header{
         grid-row : 1;
         color : #0C6CD4;
         font-weight: 600;
-        display: flex;
-        justify-content: center;
-        margin-top: 35px;
-        margin-bottom: 30px;
+        align-self: center;
+        justify-self: center;
     }
     .name-pick{
         grid-column-start: 1;
@@ -298,8 +296,6 @@ header{
 }
 
 
-
-
 //footer part
 footer{
     margin : 2rem;
@@ -316,10 +312,15 @@ footer{
             font-style: normal;
             padding: 8px 16px;
         }
-        a:hover:not(.active){
+        a:hover{
             background-color: #047CBB;
             color: white;
             padding : 10px 16px;
         }
+    .active{
+        background-color: #047CBB;
+            color: white;
+            padding : 10px 16px;
+    }
     }
 
