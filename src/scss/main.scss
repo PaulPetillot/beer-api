@@ -16,6 +16,7 @@ header{
             width: 120px;
             height: 120px;
         }
+        img:hover{cursor: pointer;}
     }
     .headerList{
         grid-column: 3;
@@ -191,6 +192,7 @@ header{
 }
 #random:hover{
     background-color : #E48E26;
+    cursor: pointer;
 }
 .global{
     display: flex;

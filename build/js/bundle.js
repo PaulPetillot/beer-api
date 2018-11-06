@@ -26,6 +26,14 @@ var ingredients = function ingredients(malt, hops, yeast) {
 };
 
 ;
+
+$('#logo').on('click', function () {
+    $('.global').css('display', 'none');
+    $('#random').css('display', 'none');
+    $('.pick-a-beer').css('display', 'none');
+    $('footer').css('display', 'flex');
+    $('.grid-container').css('display', 'grid');
+});
 $('body').on('click', '.page-number', function () {
     $('.page-number').removeClass("active");
     $(this).addClass("active");
@@ -143,13 +151,5 @@ $('#pick-menu').on('click', function () {
     $('footer').css('display', 'none');
     $('.grid-container').css('display', 'none');
 });
-
-//const pHColor = (element.ph) => {
-//   if(element.ph.value > 5){
-//        $('.ph').css('background-color', 'red')
-//   } else if(element.ph.value > 4){
-//        $('.ph').css('background-color', 'orange')
-//  } else if(element.ph.value > 1){
-//    $('.ph').css('background-color', 'yellow')}};
 
 },{}]},{},[1]);
