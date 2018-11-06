@@ -139,3 +139,12 @@ $('#pick-menu').on('click', function(){
     $('.grid-container').css('display', 'none')
 });
 
+//const pHColor = () => {
+//    Number(element.ph);
+//   if(element.ph.value > 5){
+//       $('.ph').css('background-color', 'red')
+//    }else if(element.ph.value > 4){
+//        $('.ph').css('background-color', 'orange')
+//}else{
+//$('.ph').css('background-color', 'yellow')}
+//};
