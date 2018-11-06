@@ -59,7 +59,7 @@ header{
      align-items: center;
      text-align: center;
      img{
-         width: 50px;
+         width: auto;
          height: 200px; 
          padding: 10px;
      }
@@ -110,7 +110,7 @@ header{
      align-items: center;
      text-align: center;
      img{
-        width: 70px;
+        width: auto;
         height: 280px; 
         padding: 60px;
     }
@@ -178,7 +178,8 @@ header{
 #random{
     background-color: rgb(248, 183, 4);
     border: none;
-    margin: auto;
+    margin-left: 517px;
+    margin-bottom: 10px;
     width: 230px;
     height: 80px;
     padding: 2% 4%;
