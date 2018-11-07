@@ -1,0 +1,7 @@
+$font-family : 'Open Sans';
+$font-style: normal;
+$blue : #047CBB;
+@mixin font {
+    font-family: $font-family;
+    font-style: $font-style;
+ }

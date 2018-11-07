@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'fonts';
+@import 'variables';
 //header part
 header{
     display: grid;
@@ -26,19 +27,18 @@ header{
         a{
             text-decoration: none;
             color: white;
-            font-family: 'Open Sans';
+            @include font;
             font-weight: 600;
-            font-style: normal;
             font-size: 15px;
         }
         li{
             display: inline-flex;
             margin: 5px;
             :hover{
-                color: #047CBB;
+                color: $blue;
             }
         }
-        .active-list{color: #047CBB;}
+        .active-list{color: $blue;}
     }
 }
 
@@ -66,17 +66,15 @@ header{
          padding: 10px;
      }
      .name{
-        font-family: 'Open Sans';
+        @include font;
         font-weight: 600;
-        font-style: normal;
         font-size: 16px;
         padding: 10px;
      }
      .description{
-         font-size: 12px;
-         font-family: 'Open Sans';
+        font-size: 12px;
+        @include font;
         font-weight: 400;
-        font-style: normal;
         padding: 20px;
         line-height: 15px;
         overflow: scroll;
@@ -120,24 +118,21 @@ header{
      .random-beer-data{
          width : 35%;
      .name{
-        font-family: 'Open Sans';
+        @include font;
         font-weight: 600;
-        font-style: normal;
         font-size: 18px;
         padding: 10px;
      }
      .tagline{
-        font-family: 'Open Sans';
-        font-weight: 400;
-        font-style: normal;
+        @include font;
+        font-weight: 600;
         font-size: 16px;
-        color : #0C6CD4;
+        color : $blue;
      }
      .description{
-         font-size: 13px;
-         font-family: 'Open Sans';
+        font-size: 13px;
+        @include font;
         font-weight: 400;
-        font-style: normal;
         padding: 20px;
         line-height: 20px;
      }
@@ -163,13 +158,12 @@ header{
         margin-top: 20px;
      }
      .ingredients{
-         background-color: #047CBB;
+         background-color: $blue;
          padding: 10px 13px;
          color: white;
          border:none;
-         font-family: 'Open Sans';
+         @include font;
          font-weight: 600;
-         font-style: normal;
          font-size: 12px;
      }
      button:hover{
@@ -187,9 +181,8 @@ header{
     width: 230px;
     height: 80px;
     padding: 2% 4%;
-    font-family: 'Open Sans';
+    @include font;
     font-weight: 600;
-    font-style: normal;
     font-size: 12px;
     color: white;
 }
@@ -211,9 +204,8 @@ header{
     width : 50%;
     margin : auto;
     margin-top: 80px;
-    font-family: 'Open Sans';
+    @include font;
     font-weight: 300;
-    font-style: normal;
     overflow: hidden;
     .form-pick-a-beer{
         height: 70px;
@@ -221,7 +213,7 @@ header{
     #text-pick{
         grid-column: 1;
         grid-row : 1;
-        color : #0C6CD4;
+        color : $blue;
         font-weight: 600;
         align-self: center;
         justify-self: center;
@@ -290,13 +282,12 @@ header{
         justify-self: center;
        
     button{
-        background-color: #047CBB;
+        background-color: $blue;
          padding: 10px 13px;
          color: white;
          border:none;
-         font-family: 'Open Sans';
+         @include font;
          font-weight: 600;
-         font-style: normal;
          font-size: 12px;
         }
     }
@@ -322,9 +313,8 @@ html body{position: relative;
 #box{
     display: flex;
     flex-direction: column;
-    font-family: 'Open Sans';
+    @include font;
     font-weight: 300;
-    font-style: normal;
     width: 45%;
     margin: auto;
     background-color: white;
@@ -333,12 +323,12 @@ html body{position: relative;
     #box-title{
         padding: 20px;
         display: inline-flex;
-        background-color:#047CBB;
+        background-color:$blue;
         color: white;
         justify-content: space-between;
         align-content: center;
     }
-    h1{
+    label{
         margin-top: 3px;
         font-weight: 600;
       }
@@ -350,7 +340,7 @@ html body{position: relative;
         font-size: 13px;
     }
     #close-button{
-        background-color: #047CBB;
+        background-color: $blue;
         border: none;
         color: white;
         font-weight: 600;
@@ -373,18 +363,17 @@ footer{
         a{
             text-decoration: none;
             color: black;
-            font-family: 'Open Sans';
+            @include font;
             font-weight: 600;
-            font-style: normal;
             padding: 8px 16px;
         }
         a:hover{
-            background-color: #047CBB;
+            background-color: $blue;
             color: white;
             padding : 10px 16px;
         }
     .active{
-        background-color: #047CBB;
+        background-color: $blue;
             color: white;
             padding : 10px 16px;
     }
