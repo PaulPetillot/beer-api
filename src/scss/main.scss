@@ -175,6 +175,7 @@ header{
      button:hover{
          background-color : #0C6CD4;
      }
+     .ingredients:hover{cursor: pointer;}
     }
 }
 #random{
@@ -359,8 +360,8 @@ html body{position: relative;
         margin-bottom : 20px;
         margin-top : 20px;
     }
+    #close-button:hover{cursor: pointer;}
 }
-
 //footer part
 footer{
     margin : 2rem;
