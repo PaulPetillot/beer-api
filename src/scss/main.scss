@@ -93,7 +93,6 @@ header{
         .ph{
             margin-top: 20px;
             margin-left: 28px;
-            background-color: orange;
             padding: 8px 14px;
             color: white;
         }
@@ -153,7 +152,6 @@ header{
         .ph{
             margin-top: 20px;
             margin-left: 28px;
-            background-color: orange;
             padding: 8px 14px;
             color: white;
         }
@@ -181,6 +179,7 @@ header{
     border: none;
     margin-left: 517px;
     margin-bottom: 10px;
+    margin-top: -30px;
     width: 230px;
     height: 80px;
     padding: 2% 4%;
@@ -299,6 +298,60 @@ header{
     }
 }
 
+//Ingredient Box Part
+html body{position: relative;
+    margin: 0;
+    min-height: 100%;}
+#div-box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#box{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: normal;
+    width: 45%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 3px 4px #9D9D9D;
+    #box-title{
+        padding: 20px;
+        display: inline-flex;
+        background-color:#047CBB;
+        color: white;
+        justify-content: space-between;
+        align-content: center;
+    }
+    h1{
+        margin-top: 3px;
+        font-weight: 600;
+      }
+    .box-title-ingredient{
+        margin-top: 20px;
+        padding-left: 33px;
+        h2{font-weight: 600;}
+        font-size: 13px;
+    }
+    #close-button{
+        background-color: #047CBB;
+        border: none;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    #space{margin: 20px;}
+}
 
 //footer part
 footer{
