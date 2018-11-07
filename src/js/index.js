@@ -15,6 +15,9 @@ class ingredients{
         this.yeast = yeast;
     }
 };
+$('body').on('click', '.list-category', function(){
+    $('.list-category').removeClass("active-list");
+    $(this).addClass("active-list")})
 
 $('#logo').on('click', function(){
     $('.global').css('display', 'none')
@@ -22,6 +25,8 @@ $('#logo').on('click', function(){
     $('.pick-a-beer').css('display', 'none')
     $('footer').css('display', 'flex')
     $('.grid-container').css('display', 'grid')
+    $('.list-category').removeClass("active-list");
+    $('#beers-menu').addClass("active-list") 
 });
 $('body').on('click', '.page-number', function(){
     $('.page-number').removeClass("active");
@@ -82,6 +87,9 @@ method: 'GET',
     $('.global').empty();
     let randomBeers=[]
     let randomIngredient = [];
+    let maltIngredients = '';
+    let hopsIngredients = '';
+    let yeastIngredients = '';
     datab.forEach(element => {
     randomBeers.push(new getData(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
     randomIngredient.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast))
@@ -93,7 +101,23 @@ method: 'GET',
     +element.abv+'</p></h2><h2 class="ibu">IBU<p class="ibu-value">'
     +element.ibu+'</p></h2><h2 class="ph" style="background-color:'+colorOfPH+';">pH<p class="ph-value">'
     +element.ph+'</p></h2></div><div id="button-ingredients"><button class="ingredients">INGREDIENTS</button></div></div></div>');
+    element.ingredients.malt.forEach((element, key, arr) => {
+        maltIngredients+= `${element.name} (${element.amount.value} ${element.amount.unit})`;
+        if (key!== arr.length-1){
+            maltIngredients+= ", ";
+        }
     });
+    element.ingredients.hops.forEach((element, key, arr) => {
+        hopsIngredients+= `${element.name} (${element.amount.value} ${element.amount.unit})`;
+        if (key!== arr.length-1){
+            hopsIngredients+= ", ";
+        }
+    });
+    yeastIngredients = element.ingredients.yeast;
+   $('#box-malt-div').append('<h2>Malt:</h2><p id="box-malt">'+maltIngredients+'</p>')
+   $('#box-hops-div').append('<h2>Hops:</h2><p id="box-hops">'+hopsIngredients+'</p>')
+   $('#box-yeast-div').append('<h2>Yeast:</h2><p id="box-yeast">'+yeastIngredients+'</p>')
+});
     $('.global').css('display', 'none')
 })
 
@@ -134,8 +158,12 @@ method: 'GET',
     //create beer object
     //add html to the page
     $('.global').empty();
+    $('.div-box-ingredients').empty();
     let randomBeers=[]
+    let maltIngredients = ''
     let randomIngredient = [];
+    let yeastIngredients = '';
+    let hopsIngredients = '';
     datab.forEach(element => {
        randomBeers.push(new getData(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
        randomIngredient.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast))
@@ -147,9 +175,24 @@ method: 'GET',
        +element.abv+'</p></h2><h2 class="ibu">IBU<p class="ibu-value">'
        +element.ibu+'</p></h2><h2 class="ph" style="background-color:'+colorOfPH+';">pH<p class="ph-value">'
        +element.ph+'</p></h2></div><div id="button-ingredients"><button class="ingredients">INGREDIENTS</button></div></div></div>');
+       element.ingredients.malt.forEach((element, key, arr) => {
+        maltIngredients+= `${element.name} (${element.amount.value} ${element.amount.unit})`;
+        if (key!== arr.length-1){
+            maltIngredients+= ", ";
+        }
     });
-
-    console.log(randomIngredient)
+    element.ingredients.hops.forEach((element, key, arr) => {
+        hopsIngredients+= `${element.name} (${element.amount.value} ${element.amount.unit})`;
+        if (key!== arr.length-1){
+            hopsIngredients+= ", ";
+        }
+    });
+    yeastIngredients = element.ingredients.yeast;
+    $('.div-box-ingredients').append('<div class="box-title-ingredient" id="box-malt-div"><h2>Malt:</h2><p id="box-malt">'
+    +maltIngredients+'</p></div><div class="box-title-ingredient" id="box-hops-div"><h2>Hops:</h2><p id="box-hops">'
+    +hopsIngredients+'</p></div><div class="box-title-ingredient" id="box-yeast-div"><h2>Yeast:</h2><p id="box-yeast">'
+    +yeastIngredients+'</p></div></div><p id="space"></p></div>')
+    });
    })
 });
 //Click event, with hiding and showing menu and Ingredients Box :
@@ -186,3 +229,4 @@ $('body').on('click', ".ingredients", function(){
 $('#close-button').on('click', function(){
     $('#div-box').css('display', 'none')
 });
+

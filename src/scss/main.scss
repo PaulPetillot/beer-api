@@ -35,9 +35,10 @@ header{
             display: inline-flex;
             margin: 5px;
             :hover{
-                color: #E48E26;
+                color: #047CBB;
             }
         }
+        .active-list{color: #047CBB;}
     }
 }
 
@@ -78,6 +79,8 @@ header{
         font-style: normal;
         padding: 20px;
         line-height: 15px;
+        overflow: scroll;
+        height: 15%;
      }
      .value{
          display: inline-flex;
@@ -324,7 +327,8 @@ html body{position: relative;
     width: 45%;
     margin: auto;
     background-color: white;
-    box-shadow: 3px 4px #9D9D9D;
+    -webkit-box-shadow: -1px 1px 13px -1px rgba(0,0,0,0.91); 
+    box-shadow: -1px 1px 13px -1px rgba(0,0,0,0.91);
     #box-title{
         padding: 20px;
         display: inline-flex;
@@ -340,6 +344,7 @@ html body{position: relative;
     .box-title-ingredient{
         margin-top: 20px;
         padding-left: 33px;
+        padding-right: 25px;
         h2{font-weight: 600;}
         font-size: 13px;
     }
@@ -350,7 +355,10 @@ html body{position: relative;
         font-weight: 600;
         font-size: 16px;
     }
-    #space{margin: 20px;}
+    #space{
+        margin-bottom : 20px;
+        margin-top : 20px;
+    }
 }
 
 //footer part
@@ -380,4 +388,3 @@ footer{
             padding : 10px 16px;
     }
     }
-

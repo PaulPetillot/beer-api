@@ -26,6 +26,10 @@ var ingredients = function ingredients(malt, hops, yeast) {
 };
 
 ;
+$('body').on('click', '.list-category', function () {
+    $('.list-category').removeClass("active-list");
+    $(this).addClass("active-list");
+});
 
 $('#logo').on('click', function () {
     $('.global').css('display', 'none');
@@ -33,6 +37,8 @@ $('#logo').on('click', function () {
     $('.pick-a-beer').css('display', 'none');
     $('footer').css('display', 'flex');
     $('.grid-container').css('display', 'grid');
+    $('.list-category').removeClass("active-list");
+    $('#beers-menu').addClass("active-list");
 });
 $('body').on('click', '.page-number', function () {
     $('.page-number').removeClass("active");
@@ -93,11 +99,30 @@ $.ajax({
     $('.global').empty();
     var randomBeers = [];
     var randomIngredient = [];
+    var maltIngredients = '';
+    var hopsIngredients = '';
+    var yeastIngredients = '';
     datab.forEach(function (element) {
         randomBeers.push(new getData(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
         randomIngredient.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast));
         var colorOfPH = pHColor(element.ph);
         $('.global').append('<div class="article-container"><div class="beer-image"><img src="' + element.image_url + '"></div><div class="random-beer-data"><h1 class="name">' + element.name + '</h1><h3 class="tagline">' + element.tagline + '</h3><p class= "description">' + element.description + '</p><div class="value"><h2 class="abv">ABV<p class="abv-value">' + element.abv + '</p></h2><h2 class="ibu">IBU<p class="ibu-value">' + element.ibu + '</p></h2><h2 class="ph" style="background-color:' + colorOfPH + ';">pH<p class="ph-value">' + element.ph + '</p></h2></div><div id="button-ingredients"><button class="ingredients">INGREDIENTS</button></div></div></div>');
+        element.ingredients.malt.forEach(function (element, key, arr) {
+            maltIngredients += element.name + ' (' + element.amount.value + ' ' + element.amount.unit + ')';
+            if (key !== arr.length - 1) {
+                maltIngredients += ", ";
+            }
+        });
+        element.ingredients.hops.forEach(function (element, key, arr) {
+            hopsIngredients += element.name + ' (' + element.amount.value + ' ' + element.amount.unit + ')';
+            if (key !== arr.length - 1) {
+                hopsIngredients += ", ";
+            }
+        });
+        yeastIngredients = element.ingredients.yeast;
+        $('#box-malt-div').append('<h2>Malt:</h2><p id="box-malt">' + maltIngredients + '</p>');
+        $('#box-hops-div').append('<h2>Hops:</h2><p id="box-hops">' + hopsIngredients + '</p>');
+        $('#box-yeast-div').append('<h2>Yeast:</h2><p id="box-yeast">' + yeastIngredients + '</p>');
     });
     $('.global').css('display', 'none');
 });
@@ -134,16 +159,32 @@ $('#random').on('click', function () {
         //create beer object
         //add html to the page
         $('.global').empty();
+        $('.div-box-ingredients').empty();
         var randomBeers = [];
+        var maltIngredients = '';
         var randomIngredient = [];
+        var yeastIngredients = '';
+        var hopsIngredients = '';
         datab.forEach(function (element) {
             randomBeers.push(new getData(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
             randomIngredient.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast));
             var colorOfPH = pHColor(element.ph);
             $('.global').append('<div class="article-container"><div class="beer-image"><img src="' + element.image_url + '"></div><div class="random-beer-data"><h1 class="name">' + element.name + '</h1><h3 class="tagline">' + element.tagline + '</h3><p class= "description">' + element.description + '</p><div class="value"><h2 class="abv">ABV<p class="abv-value">' + element.abv + '</p></h2><h2 class="ibu">IBU<p class="ibu-value">' + element.ibu + '</p></h2><h2 class="ph" style="background-color:' + colorOfPH + ';">pH<p class="ph-value">' + element.ph + '</p></h2></div><div id="button-ingredients"><button class="ingredients">INGREDIENTS</button></div></div></div>');
+            element.ingredients.malt.forEach(function (element, key, arr) {
+                maltIngredients += element.name + ' (' + element.amount.value + ' ' + element.amount.unit + ')';
+                if (key !== arr.length - 1) {
+                    maltIngredients += ", ";
+                }
+            });
+            element.ingredients.hops.forEach(function (element, key, arr) {
+                hopsIngredients += element.name + ' (' + element.amount.value + ' ' + element.amount.unit + ')';
+                if (key !== arr.length - 1) {
+                    hopsIngredients += ", ";
+                }
+            });
+            yeastIngredients = element.ingredients.yeast;
+            $('.div-box-ingredients').append('<div class="box-title-ingredient" id="box-malt-div"><h2>Malt:</h2><p id="box-malt">' + maltIngredients + '</p></div><div class="box-title-ingredient" id="box-hops-div"><h2>Hops:</h2><p id="box-hops">' + hopsIngredients + '</p></div><div class="box-title-ingredient" id="box-yeast-div"><h2>Yeast:</h2><p id="box-yeast">' + yeastIngredients + '</p></div></div><p id="space"></p></div>');
         });
-
-        console.log(randomIngredient);
     });
 });
 //Click event, with hiding and showing menu and Ingredients Box :

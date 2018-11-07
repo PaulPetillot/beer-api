@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="./images/logo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="./images/logo-favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="./css/build.css" />
     <title>Beer!</title>
   </head>
@@ -14,9 +14,9 @@
       </div>
       <div class= "headerList">
         <ul>
-         <li><a id="beers-menu" href="#">BEERS</a></li>
-          <li><a id="random-menu" href="#">QUICK FIND</a></li>
-          <li><a id="pick-menu" href="#">PICK A BEER</a></li>
+         <li><a id="beers-menu" class='list-category' href="#">BEERS</a></li>
+          <li><a id="random-menu" class='list-category' href="#">QUICK FIND</a></li>
+          <li><a id="pick-menu" class='list-category' href="#">PICK A BEER</a></li>
         </ul>
       </div>
     </header>
@@ -28,37 +28,37 @@
 <button id="random">GIVE ME ANOTHER BEER</button>
 
   <div class="pick-a-beer">
-    <div id='text-pick'>
+    <div id="text-pick">
     <h1>PICK A BEER</h1>
     </div>
     <div class="name-pick">
       <form class="form-pick-a-beer">
-        <label id='name-search'>NAME</label>
-        <input id='name-input'>
+        <label id="name-search">NAME</label>
+        <input id="name-input">
       </form>
     </div>
     <div class="hops-pick">
       <form class="form-pick-a-beer">
-        <label id='hops-search'>HOPS</label>
-        <input id='hops-input'>
+        <label id="hops-search">HOPS</label>
+        <input id="hops-input">
       </form>
     </div>
-    <div class='abv-pick'>
+    <div class="abv-pick">
       <form class="form-pick-a-beer">
-        <label id='abv-search'>ABV</label>
-        <input id='abv-input'>
+        <label id="abv-search">ABV</label>
+        <input id="abv-input">
       </form>
     </div>
-    <div class='ibu-pick'>
+    <div class="ibu-pick">
       <form class="form-pick-a-beer">
-        <label id='ibu-search'>IBU</label>
-        <input id='ibu-input'>
+        <label id="ibu-search">IBU</label>
+        <input id="ibu-input">
       </form>
     </div>
-    <div class='ebc-pick'>
+    <div class="ebc-pick">
       <form class="form-pick-a-beer">
-        <label id='ebc-search'>EBC</label>
-        <input id='ebc-input'>
+        <label id="ebc-search">EBC</label>
+        <input id="ebc-input">
       </form>
     </div>
       <div class="button-pick-a-beer">
@@ -76,29 +76,23 @@
         <a class="page-number" href="#">3</a>
         <a class="page-number" href="#">4</a>
         <a class="page-number" href="#">5</a>
-        <a class='next' href="#">&raquo;</a>
+        <a class="next" href="#">&raquo;</a>
       </div>
     </footer>
-  <div id='div-box'>
+  <div id="div-box">
   <section id="box">
       <div id="box-title">
         <h1>INGREDIENTS</h1>
         <button id="close-button">X</button>
       </div>
-      <div>
-        <div class="box-title-ingredient">
-          <h2>Malt:</h2>
-          <p id="box-malt">aaa</p>
+      <div class="div-box-ingredients">
+        <div class="box-title-ingredient" id="box-malt-div">
         </div>
-        <div class="box-title-ingredient">
-          <h2>Hops:</h2>
-          <p id="box-hops">aaa</p>
+        <div class="box-title-ingredient" id="box-hops-div">
         </div>
-        <div class="box-title-ingredient">
-          <h2>Yeast:</h2>
-          <p id="box-yeast">aaa</p>
+        <div class="box-title-ingredient" id="box-yeast-div">
         </div>
-        <p id='space'> </p>
+        <p id="space"> </p>
       </div>
   </section>
 </div>
