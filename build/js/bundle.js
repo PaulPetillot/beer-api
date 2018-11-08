@@ -54,7 +54,11 @@ $('#logo').on('click', function () {
     $('footer').css('display', 'flex');
     $('.grid-container').css('display', 'grid');
     $('.list-category').removeClass("active-list");
+    $('.page-number').removeClass("active");
+    $('#hey').addClass("active");
     $('#beers-menu').addClass("active-list");
+    $('.grid-container').empty();
+    loadingData();
 });
 //Pagination eventhandler part
 
@@ -120,7 +124,7 @@ $('#close-button').on('click', function () {
 });
 //Sorry
 $('.pick-a-beer-but').on('click', function () {
-    alert('This feature will come later in the year.. Stay Tuned !');
+    alert('This feature will come one day..');
 });
 //This is targeting the value of the pH of the beer, and adding differents colors depending 
 //of the value.
