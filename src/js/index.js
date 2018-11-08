@@ -77,7 +77,10 @@ $('body').on('click', ".ingredients", function(){
 $('#close-button').on('click', function(){
     $('#div-box').css('display', 'none')
 });
-
+//Sorry
+$('.pick-a-beer-but').on('click', function(){
+    alert('This feature will come later in the year.. Stay Tuned !')
+});
 //This is targeting the value of the pH of the beer, and adding differents colors depending 
 //of the value.
 let pHColor = (beerPH)=>{
