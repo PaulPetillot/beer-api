@@ -29,10 +29,10 @@ JQUERY and Ajax | API  | Event handlers | ES6 | OOP |
 ## Device Screenshots
 **Desktop**
 ----
-<img src="./images/BeersCategory.png">
-<img src="./images/QuickFindMenu.png">
-<img src="./images/IngredientsMenu.png">
-<img src="./images/Pick-A-BeerMenu.png">
+<img src="./images/beers-category.png">
+<img src="./images/quick-find-menu.png">
+<img src="./images/ingredients-menu.png">
+<img src="./images/pick-a-beer-menu.png">
 
 ----
 ## Dead Line for the project
