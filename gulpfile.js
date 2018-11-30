@@ -41,7 +41,6 @@ gulp.task("browserify", function () {
 	watchify(b, { delay: DELAY }).on("update", bundle);
 	bundle();
 });
-
 gulp.task("serve", function () {
 	browserSync.init({
 		server: {
